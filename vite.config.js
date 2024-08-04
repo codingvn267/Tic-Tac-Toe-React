@@ -1,10 +1,15 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
-  base: '/07-tic-tac-toe-starting-project/',
-  plugins: [react()],
-  build: {
-    outDir: 'dist'
-  }
+  plugins: [
+    createHtmlPlugin({
+      minify: true,
+      inject: {
+        data: {
+          title: 'React Tic-Tac-Toe',
+        },
+      },
+    }),
+  ],
 });

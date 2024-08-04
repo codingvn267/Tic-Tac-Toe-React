@@ -1,15 +1,7 @@
 import { defineConfig } from 'vite';
-import { createHtmlPlugin } from 'vite-plugin-html';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [
-    createHtmlPlugin({
-      minify: true,
-      inject: {
-        data: {
-          title: 'React Tic-Tac-Toe',
-        },
-      },
-    }),
-  ],
+  base: '/Tic-Tac-Toe-React/', 
+  plugins: [react()],
 });
